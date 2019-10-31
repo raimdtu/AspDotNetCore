@@ -35,21 +35,8 @@ stages:
               displayName: 'Run a one-line script'
         deploy:
           steps:
-          - task: IISWebAppManagementOnMachineGroup@0
-            displayName: 'Create Website'
-            inputs:
-              WebsiteName: 'Default Web Site'
-              AddBinding: True
-              Bindings: '{"bindings":[{"protocol":"http","ipAddress":"All Unassigned","port":"80","hostname":"","sslThumbprint":"","sniFlag":false}]}'
-              ParentWebsiteNameForVD: 'Default Web Site'
-              ParentWebsiteNameForApplication: 'Default Web Site'
-          - task: IISWebAppDeploymentOnMachineGroup@0
-            displayName: 'Deploy application to Website'
-            inputs:
-              WebSiteName: 'Default Web Site'
-              Package: '$(Pipeline.Workspace)/drop/**/*.zip'
-              TakeAppOfflineFlag: true
-              XmlVariableSubstitution: true
+          - script: echo Hello, world! This is deploy
+            displayName: 'Run a one-line script'
 
         routeTraffic:
           steps:
