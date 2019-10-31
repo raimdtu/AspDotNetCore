@@ -30,38 +30,44 @@ stages:
         maxBatchSize: 1
         preDeploy:
           steps:
-            - download: none
+            - download: build
+              artifact: drop
             - script: echo Hello, world! This is pre-deploy
               displayName: 'Run a one-line script'
 
         deploy:
           steps:
-            - download: none
+            - download: build
+              artifact: drop
             - script: echo Hello, world! This is deploy
               displayName: 'Run a one-line script'
 
         routeTraffic:
           steps:
-            - download: none
+            - download: build
+              artifact: drop
             - script: echo Hello, world! This is routeTraffic
               displayName: 'Run a one-line script'
 
         postRouteTraffic:
           steps:
-            - download: none
+            - download: build
+              artifact: drop
             - script: echo Hello, world! This is postRouteTraffic
               displayName: 'Run a one-line script'
 
         on:
           failure:
             steps:
-            - download: none
+            - download: build
+              artifact: drop
             - script: echo Hello, world! This is on failure
               displayName: 'Run a one-line script'
 
           success:
             steps:
-            - download: none
+            - download: build
+              artifact: drop
             - script: echo Hello, world! This is on success
               displayName: 'Run a one-line script' 
 
