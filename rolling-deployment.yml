@@ -33,8 +33,10 @@ stages:
             - download: none
             - script: echo Hello, world! This is pre-deploy
               displayName: 'Run a one-line script'
+
         deploy:
           steps:
+            - download: none
             - script: echo Hello, world! This is deploy
               displayName: 'Run a one-line script'
 
