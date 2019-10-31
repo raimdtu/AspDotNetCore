@@ -21,7 +21,7 @@ stages:
   jobs:  
   - deployment: VMDeploy
     displayName: web
-    pool: demopool
+    pool: default
     environment:
       name: VM-Env
       resourceType: VirtualMachine
