@@ -35,8 +35,8 @@ stages:
               displayName: 'Run a one-line script'
         deploy:
           steps:
-          - script: echo Hello, world! This is deploy
-            displayName: 'Run a one-line script'
+            - script: echo Hello, world! This is deploy
+              displayName: 'Run a one-line script'
 
         routeTraffic:
           steps:
